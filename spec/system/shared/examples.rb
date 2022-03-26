@@ -3,14 +3,14 @@
 require "rails_helper"
 require "system/shared/contexts"
 
-shared_examples "when New Comment Submission" do |expect_comment_count|
-  context "when the new comment is submitted" do
+shared_examples "New Comment Submission" do |expect_comment_count|
+  context "the new comment is submitted" do
     let(:name) { "John Smith" }
     let(:text) { "Hello there!" }
 
     include_context "Form Submitted", name: :name, text: :text
 
-    scenario "when comment is added" do
+    scenario "comment is added" do
       expect(page).to have_css(".js-comment-author", text: name)
       expect(page).to have_css(".js-comment-text", text: text)
       expect(page).to have_no_content("Your comment was not saved!")
@@ -21,7 +21,7 @@ shared_examples "when New Comment Submission" do |expect_comment_count|
     end
   end
 
-  context "when the new comment is submitted with blank fields", blank_form_submitted: true do
+  context "the new comment is submitted with blank fields", blank_form_submitted: true do
     let!(:comments_count) { all(".comment").size }
 
     scenario "comment is not added" do
@@ -45,7 +45,7 @@ shared_examples "when New Comment Submission" do |expect_comment_count|
 end
 
 shared_examples "Validation errors displaying" do
-  context "when the new comment is submitted with blank fields", blank_form_submitted: true do
+  context "the new comment is submitted with blank fields", blank_form_submitted: true do
     scenario "validation errors displayed" do
       expect(page).to have_content("Your comment was not saved!")
       expect(page).to have_content("Author: can't be blank")
