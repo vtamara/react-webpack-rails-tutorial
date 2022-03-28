@@ -28,8 +28,11 @@
 # Uncomment below for a setup with just postgres and change your Gemfile to reflect this
 default: &default
   adapter: postgresql
-  username:
-  password:
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV.fetch('DB_USER', 'react_webpack_rails_tutorial') %>
+  password: <%= ENV.fetch("DB_PASSWORD") %>
+  host:  <%= ENV.fetch("DB_HOST") %>
 
 development:
   <<: *default

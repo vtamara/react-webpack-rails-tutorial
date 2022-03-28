@@ -18,6 +18,8 @@ gem "puma"
 
 gem 'net-smtp'
 
+gem 'dotenv-rails'
+
 # Use SCSS for stylesheets
 gem "sass-rails"
 # Use Uglifier as compressor for JavaScript assets

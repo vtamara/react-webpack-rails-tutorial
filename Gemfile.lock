@@ -117,6 +117,10 @@ GEM
     diff-lcs (1.5.0)
     digest (3.1.0)
     docile (1.4.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     erubis (2.7.0)
     execjs (2.8.1)
@@ -236,8 +240,6 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rb-kqueue (0.2.8)
-      ffi (>= 0.5.0)
     rdoc (6.3.3)
     react_on_rails (12.5.2)
       addressable
@@ -383,6 +385,7 @@ DEPENDENCIES
   coffee-rails
   coveralls
   database_cleaner
+  dotenv-rails
   factory_bot_rails
   foreman
   generator_spec
@@ -402,7 +405,6 @@ DEPENDENCIES
   rails-html-sanitizer
   rails_best_practices
   rainbow
-  rb-kqueue (>= 0.2)
   react_on_rails (= 12.5.2)
   redis (= 3.3.3)
   rspec-rails
